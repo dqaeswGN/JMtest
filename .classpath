@@ -6,5 +6,8 @@
 			<accessrule kind="accessible" pattern="**"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-1.46-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-1.46-sources.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-1.46.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
