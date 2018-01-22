@@ -3,6 +3,11 @@ package MD5;
 import java.security.MessageDigest;
 
 public class Md5test {
+	/**
+	 * MD5
+	 * @param text
+	 * @return
+	 */
 	public static  String  md5test(String text){
 		StringBuffer sb=new StringBuffer();
 		try{
