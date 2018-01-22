@@ -134,6 +134,12 @@ public class SM4 {
         return rk;  
     }  
   
+    /**
+     * 设置密钥
+     * 这个函数内部会对当前传入的主密钥进行32轮的迭代，每次迭代的轮密钥都被存放到ctx结构中的sk数组中
+     * @param SK
+     * @param key
+     */
     private void sm4_setkey(long[] SK, byte[] key)   
     {  
         long[] MK = new long[4];  
@@ -200,6 +206,12 @@ public class SM4 {
         return ret;  
     }  
   
+    /**
+     * 设置加密密钥
+     * @param ctx
+     * @param key
+     * @throws Exception
+     */
     public void sm4_setkey_enc(SM4_Context ctx, byte[] key) throws Exception  
     {  
         if (ctx == null)   
@@ -216,6 +228,12 @@ public class SM4 {
         sm4_setkey(ctx.sk, key);  
     }  
   
+    /**
+     * 解密函数
+     * @param ctx
+     * @param key
+     * @throws Exception
+     */
     public void sm4_setkey_dec(SM4_Context ctx, byte[] key) throws Exception  
     {  
         if (ctx == null)   

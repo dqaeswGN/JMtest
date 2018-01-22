@@ -8,7 +8,7 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 public class SM4Utils {
-	private String secretKey = "";  
+	private String secretKey = "";//必须为16位
     private String iv = "";  
     private boolean hexString = false;  
       
@@ -158,28 +158,30 @@ public class SM4Utils {
       
     public static void main(String[] args) throws IOException   
     {  
-        String plainText = "Hello world";  
+        String str = "Hello world";  
           
         SM4Utils sm4 = new SM4Utils();  
-        sm4.secretKey = "JeF8U9wHFOMfs2Y8";  
+//        sm4.secretKey = "JeF8U9wHFOMfs2Y8";  
+        sm4.secretKey = "1111111111111111";
         sm4.hexString = false;  
           
         System.out.println("ECB模式");  
-        String cipherText = sm4.encryptData_ECB(plainText);  
+        String cipherText = sm4.encryptData_ECB(str);  
         System.out.println("加密: " + cipherText);  
         System.out.println("");  
           
-        plainText = sm4.decryptData_ECB(cipherText);  
-        System.out.println("解密: " + plainText);  
+        str = sm4.decryptData_ECB(cipherText);  
+        System.out.println("解密: " + str);  
         System.out.println("");  
           
         System.out.println("CBC模式");  
-        sm4.iv = "UISwD9fW6cFh9SNS";  
-        cipherText = sm4.encryptData_CBC(plainText);  
+//        sm4.iv = "UISwD9fW6cFh9SNS";
+        sm4.iv = "1111111111111111";
+        cipherText = sm4.encryptData_CBC(str);  
         System.out.println("加密: " + cipherText);  
         System.out.println("");  
           
-        plainText = sm4.decryptData_CBC(cipherText);  
-        System.out.println("解密: " + plainText);  
+        str = sm4.decryptData_CBC(cipherText);  
+        System.out.println("解密: " + str);  
     }  
 }
