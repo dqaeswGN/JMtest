@@ -27,7 +27,7 @@ public class Md5test {
 	}
 	
 	public static void main(String[] args){
-		md5test("hello");
+		md5test("hello111123asdfa212adfs");
 		
 	}
 }

@@ -16,11 +16,11 @@ public class DEStest {
 	 */
 	public DEStest(String str,String key){
 		try{			
-			SecureRandom random = new SecureRandom();
 			DESKeySpec  desk=new DESKeySpec(key.getBytes());
 			SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("des");  
 			SecretKey secretKey = keyFactory.generateSecret(desk);
 			
+			SecureRandom random = new SecureRandom();
 			Cipher cipher = Cipher.getInstance("des");  
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey, random);  
 			byte[] cipherData = cipher.doFinal(str.getBytes());  
